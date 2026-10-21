@@ -1,0 +1,33 @@
+name: Build Geode Mod
+
+on:
+  push:
+    branches: [ "main", "master" ]
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  build:
+    name: Android64
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Build the mod
+        id: build
+        uses: geode-sdk/build-geode-mod@main
+        with:
+          combine: true
+          target: Android64
+          # La versión 2.2081 se toma automáticamente del mod.json
+
+      - name: Upload Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: android64
+          path: |
+            ${{ steps.build.outputs.build-output }}
+            **/*.geode
+          if-no-files-found: error
