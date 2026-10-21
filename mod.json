@@ -1,0 +1,88 @@
+{
+	"geode": "5.11.2",
+	"gd": {
+		"win": "2.2081",
+		"android": "2.2081"
+	},
+	"version": "v1.2.0",
+	"id": "ai.predictivebuffer.opt",
+	"name": "Predictive Buffer Opt",
+	"developer": "SussyImposter + Grok",
+	"description": "Optimized trajectory-based input buffer. Always on by default. Per-mode, ticks 1-8 (same for Wave), dual off, no simulation cap, no particles during sim. Android 2.2081.",
+	"settings": {
+		"enabled": {
+			"type": "bool",
+			"name": "Activado",
+			"description": "Master switch. Si está apagado, no simula nada (input 100% normal).",
+			"default": true
+		},
+		"max-ticks": {
+			"type": "int",
+			"name": "Ticks máximos",
+			"description": "Cuántos ticks puede retrasar un toque (1-8). Default 2. Aplica a TODOS los modos incluyendo Wave.",
+			"default": 2,
+			"min": 1,
+			"max": 8
+		},
+		"dual-enabled": {
+			"type": "bool",
+			"name": "Dual Mode",
+			"description": "Simular los dos jugadores a la vez. Apagado por defecto porque tumba mucho los FPS.",
+			"default": false
+		},
+		"show-indicator": {
+			"type": "bool",
+			"name": "Indicador de ticks",
+			"description": "Muestra un número chico con cuántos ticks retrasó el último toque. Solo para probar.",
+			"default": false
+		},
+		"mode-cube": {
+			"type": "bool",
+			"name": "Cubo",
+			"description": "Buffer en modo Cubo.",
+			"default": true
+		},
+		"mode-ship": {
+			"type": "bool",
+			"name": "Nave",
+			"description": "Buffer en Nave (mantener y soltar).",
+			"default": true
+		},
+		"mode-ball": {
+			"type": "bool",
+			"name": "Bola",
+			"description": "Buffer en Bola.",
+			"default": true
+		},
+		"mode-ufo": {
+			"type": "bool",
+			"name": "UFO",
+			"description": "Buffer en UFO (mantener y soltar).",
+			"default": true
+		},
+		"mode-wave": {
+			"type": "bool",
+			"name": "Wave",
+			"description": "Buffer en Wave (mismos ticks que el resto).",
+			"default": true
+		},
+		"mode-robot": {
+			"type": "bool",
+			"name": "Robot",
+			"description": "Buffer en Robot.",
+			"default": true
+		},
+		"mode-spider": {
+			"type": "bool",
+			"name": "Araña",
+			"description": "Buffer en Araña.",
+			"default": true
+		},
+		"mode-swing": {
+			"type": "bool",
+			"name": "Swing",
+			"description": "Buffer en Swing.",
+			"default": true
+		}
+	}
+}
