@@ -1,0 +1,104 @@
+{
+	"geode": "5.11.2",
+	"gd": {
+		"win": "2.2081",
+		"android": "2.2081"
+	},
+	"version": "v1.1.0",
+	"id": "ai.predictivebuffer.opt",
+	"name": "Predictive Buffer Opt",
+	"developer": "SussyImposter + Grok",
+	"description": "Optimized trajectory-based input buffer. Always on by default. Per-mode, ticks 1-8, dual off, simulation cap, no particles during sim. Android 2.2081.",
+	"settings": {
+		"enabled": {
+			"type": "bool",
+			"name": "Activado",
+			"description": "Master switch. Si está apagado, no simula nada (input 100% normal).",
+			"default": true
+		},
+		"max-ticks": {
+			"type": "int",
+			"name": "Ticks máximos",
+			"description": "Cuántos ticks puede retrasar un toque (1-8). Default 2. Más alto = más ayuda pero más pesado y se siente más falso.",
+			"default": 2,
+			"min": 1,
+			"max": 8
+		},
+		"wave-ticks": {
+			"type": "int",
+			"name": "Ticks Wave (máximo)",
+			"description": "Máximo de ticks solo para Wave. Más corto que el general para no romper spam. Si tocas muy seguido, el buffer no entra.",
+			"default": 2,
+			"min": 1,
+			"max": 6
+		},
+		"dual-enabled": {
+			"type": "bool",
+			"name": "Dual Mode",
+			"description": "Simular los dos jugadores a la vez. Apagado por defecto porque tumba mucho los FPS.",
+			"default": false
+		},
+		"sim-cap-ticks": {
+			"type": "int",
+			"name": "Tope de simulación",
+			"description": "Si un toque ya gastó más de este número de ticks de cálculo, se suelta el input normal y no sigue. Evita bajones y cierres.",
+			"default": 8,
+			"min": 4,
+			"max": 16
+		},
+		"show-indicator": {
+			"type": "bool",
+			"name": "Indicador de ticks",
+			"description": "Muestra un número chico con cuántos ticks retrasó el último toque. Solo para probar. Sin textos grandes en pantalla.",
+			"default": false
+		},
+		"mode-cube": {
+			"type": "bool",
+			"name": "Cubo",
+			"description": "Buffer en modo Cubo (principalmente el toque).",
+			"default": true
+		},
+		"mode-ship": {
+			"type": "bool",
+			"name": "Nave",
+			"description": "Buffer en Nave (mantener y soltar = cambio de gravedad).",
+			"default": true
+		},
+		"mode-ball": {
+			"type": "bool",
+			"name": "Bola",
+			"description": "Buffer en Bola (solo retraso del cambio de gravedad).",
+			"default": true
+		},
+		"mode-ufo": {
+			"type": "bool",
+			"name": "UFO",
+			"description": "Buffer en UFO (mantener y soltar = cambio de gravedad).",
+			"default": true
+		},
+		"mode-wave": {
+			"type": "bool",
+			"name": "Wave",
+			"description": "Buffer en Wave. Usa el límite de ticks de Wave y spam guard.",
+			"default": true
+		},
+		"mode-robot": {
+			"type": "bool",
+			"name": "Robot",
+			"description": "Buffer en Robot (retraso del salto y del soltado).",
+			"default": true
+		},
+		"mode-spider": {
+			"type": "bool",
+			"name": "Araña",
+			"description": "Buffer en Araña (solo retraso del cambio de gravedad).",
+			"default": true
+		},
+		"mode-swing": {
+			"type": "bool",
+			"name": "Swing",
+			"description": "Buffer en Swing.",
+			"default": true
+		}
+	}
+}
